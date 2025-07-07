@@ -1,6 +1,6 @@
 from typing import Union
 from fastapi import FastAPI
-from pydantic import BaseModel
+from pydantic import BaseModel #Part 2
 
 app = FastAPI()
 
@@ -16,6 +16,7 @@ def read_root():
 def read_item(item_id: int, q: Union[str, None] = None):
     return {"item_id": item_id, "q": q}
 
+#Part2
 @app.put("/items/{item_id}")
 def update_item(item_id: int, item: Item):
     return {"item_name": item.name, "item_id": item_id}
